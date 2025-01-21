@@ -1,4 +1,4 @@
-# Kyo Nani「今日何なに食べる」
+# Kyo Nani「今日なに食べる」
 ## 使用技術
 - bun
 - React + TypeScript + Vite
@@ -7,6 +7,7 @@
 - 一旦、レシピ一覧が出るようにする
 - その後デザインを整理してページを作成していく
 
+# 既存readme↓
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
