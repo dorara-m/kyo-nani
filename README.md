@@ -1,4 +1,9 @@
 # Kyo Nani「今日なに食べる」
+## 起動
+```
+bun dev
+```
+
 ## 使用技術
 - bun
 - React + TypeScript + Vite

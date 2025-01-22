@@ -28,7 +28,7 @@ function App() {
       try {
         // microCMSのAPIキーとエンドポイントを設定してください
         const response = await fetch(
-          "https://whats-for-dinner.microcms.io/api/v1/results",
+          "https://whats-for-dinner.microcms.io/api/v1/results?limit=100",
           {
             headers: {
               "X-MICROCMS-API-KEY": "IXwFsBjw7zfWfbKgjLj7Do7swc3XkdKpxZca",
@@ -55,7 +55,7 @@ function App() {
       <div className="recipe-grid">
         {recipes.map((recipe) => (
           <div key={recipe.id} className="recipe-card">
-            {/* <img src={recipe.thumb.url} alt={recipe.name} /> */}
+            {recipe.thumb && <img src={recipe.thumb.url} alt={recipe.name} />}
             <h2>{recipe.name}</h2>
             <div className="recipe-tags">
               {recipe.materialCategory.map((cat) => (
