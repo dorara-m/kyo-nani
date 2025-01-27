@@ -1,23 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-
-// レシピのタイプ定義
-type Recipe = {
-  id: string;
-  name: string;
-  thumb: {
-    url: string;
-    height: number;
-    width: number;
-  };
-  materialCategory: {
-    id: string;
-    name: string;
-  }[];
-  feeling: string[];
-  cookingCategory: string[];
-  recipeUrl: string;
-};
+import Card from "./Card";
+import { Recipe } from "./types";
 
 function App() {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
@@ -54,31 +38,13 @@ function App() {
       <h1>今日なに食べる？</h1>
       <div className="recipe-grid">
         {recipes.map((recipe) => (
-          <div key={recipe.id} className="recipe-card">
-            {recipe.thumb && <img src={recipe.thumb.url} alt={recipe.name} />}
-            <h2>{recipe.name}</h2>
-            <div className="recipe-tags">
-              {recipe.materialCategory.map((cat) => (
-                <span key={cat.id} className="category-tag">
-                  {cat.name}
-                </span>
-              ))}
-              {recipe.feeling.map((feel) => (
-                <span key={feel} className="feeling-tag">
-                  {feel}
-                </span>
-              ))}
-            </div>
-            {recipe.recipeUrl && (
-              <a
-                href={recipe.recipeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                レシピを見る
-              </a>
-            )}
-          </div>
+          recipe.recipeUrl ? (
+            <a href={recipe.recipeUrl} target="_blank" rel="noopener noreferrer">
+              <Card recipe={recipe} />
+            </a>
+          ) : (
+            <Card recipe={recipe} />
+          )
         ))}
       </div>
     </div>
