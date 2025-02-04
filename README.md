@@ -11,6 +11,7 @@ bun dev
 ## todo
 - 一旦、レシピ一覧が出るようにする
 - その後デザインを整理してページを作成していく
+- 実際に食べた夕飯を記録できるようにする。昨日と被らないものを絞り込む機能あってもいい
 
 # 既存readme↓
 Currently, two official plugins are available:
