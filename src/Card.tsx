@@ -1,9 +1,14 @@
 import { Recipe } from "./types";
 
 const Card = ({ recipe }: { recipe: Recipe }) => {
-  return (
-    <div key={recipe.id} className="recipe-card">
-      {recipe.thumb && <img src={recipe.thumb.url} alt={recipe.name} />}
+  const cardContent = (
+    <>
+      <div className="recipe-img">
+        <img
+          src={recipe.thumb?.url || "/src/assets/noimage.jpg"} 
+          alt={recipe.name} 
+        />
+      </div>
       <h2>{recipe.name}</h2>
       <div className="recipe-tags">
         {recipe.materialCategory.map((cat) => (
@@ -17,6 +22,18 @@ const Card = ({ recipe }: { recipe: Recipe }) => {
           </span>
         ))}
       </div>
+    </>
+  )
+
+  return (
+    <div key={recipe.id} className="recipe-card">
+      {recipe.recipeUrl ? (
+        <a href={recipe.recipeUrl} target="_blank" rel="noopener noreferrer">
+          {cardContent}
+        </a>
+      ) : (
+          cardContent
+      )}
     </div>
   );
 };

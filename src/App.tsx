@@ -34,17 +34,11 @@ function App() {
   if (loading) return <div>読み込み中...</div>;
 
   return (
-    <div className="recipe-container">
+    <div className="recipe-body --loaded">
       <h1>今日なに食べる？</h1>
       <div className="recipe-grid">
         {recipes.map((recipe) => (
-          recipe.recipeUrl ? (
-            <a href={recipe.recipeUrl} target="_blank" rel="noopener noreferrer">
-              <Card recipe={recipe} />
-            </a>
-          ) : (
-            <Card recipe={recipe} />
-          )
+          <Card key={recipe.id} recipe={recipe} />
         ))}
       </div>
     </div>
