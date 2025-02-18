@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./App.css";
+import "./sass/App.scss";
 import Card from "./Card";
 import { Recipe } from "./types";
 
